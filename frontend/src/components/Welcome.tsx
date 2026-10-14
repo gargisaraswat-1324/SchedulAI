@@ -4,7 +4,12 @@ import { useState } from 'react';
 function Welcome() {
   const [showFeatures, setShowFeatures] = useState(true);
 
+  const [name,setName] = useState('');
+
+
   const isLoggedIn = true; // Replace with actual authentication logic
+
+ 
 
   const features = [
     "Timetable Management",
@@ -32,6 +37,19 @@ function Welcome() {
           Please log in to access all features.
         </p>
       )}
+
+      <input
+      type = "text"
+      value = {name}
+      onChange = {(e) => setName(e.target.value)}
+      placeholder = "Enter your name"
+      className = "mt-4 rounded-lg border p-2"
+      />
+
+      <p className = "mt-2">
+        Hello, {name}
+      </p>
+
 
       <button onClick={() => setShowFeatures(!showFeatures)} 
         className = "mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white ">
