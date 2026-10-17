@@ -1,6 +1,12 @@
 
 import { useState } from 'react';
 import FacultyPage from './components/dashboard/FacultyPage';
+import RoomsPage from "./components/dashboard/RoomsPage";
+import TimetablePage from './components/dashboard/TimetablePage';
+import SectionsPage from './components/dashboard/SectionsPage';
+import SubjectsPage from './components/dashboard/SubjectsPage' ;
+
+
 import {
   LayoutDashboard,
   CalendarDays,
@@ -368,7 +374,15 @@ function App() {
           <div className="mx-auto max-w-7xl p-4 sm:p-8">
             {activePage === 'Faculty' ? (
               <FacultyPage />
-            ) : (
+            ) : activePage === 'Rooms & Labs' ? (
+              <RoomsPage />
+            ) : activePage === 'Timetable' ? (
+              <TimetablePage />
+            ) : activePage === 'Sections' ?(
+              <SectionsPage />
+            ) : activePage === 'SectionsPage' ?(
+              <SectionsPage />
+            ) :(
               <DashboardContent onNavigate={navigateTo} />
             )}
           </div>
